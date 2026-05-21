@@ -1,0 +1,53 @@
+/* Weather.module.css — .weather-grid, .weather-main, .forecast, .weather-tip */
+
+.weather-grid{display:grid;grid-template-columns:1fr 2fr;gap:1.5rem}
+
+.weather-main{
+  background:linear-gradient(135deg,#1e3a5f,#2563eb);
+  border-radius:var(--radius);
+  padding:2rem;
+  color:#fff;
+}
+
+.weather-city{font-size:0.85rem;opacity:0.7;margin-bottom:0.5rem}
+.weather-temp{font-family:'DM Serif Display',serif;font-size:5rem;line-height:1;margin-bottom:0.5rem}
+.weather-desc{font-size:1.1rem;margin-bottom:1.5rem;opacity:0.9}
+
+.weather-meta{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.weather-meta-item{opacity:0.8;font-size:0.82rem}
+.weather-meta-item strong{display:block;font-size:1rem;opacity:1;color:#fff}
+
+.forecast{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  padding:1.5rem;
+  display:flex;
+  flex-direction:column;
+  gap:0;
+}
+
+.forecast-day{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:1rem 0;
+  border-bottom:0.5px solid var(--border);
+}
+
+.forecast-day:last-child{border-bottom:none}
+.forecast-day-name{font-weight:500;font-size:0.9rem;flex:1}
+.forecast-icon{font-size:1.5rem;flex:1;text-align:center}
+.forecast-temps{text-align:right;flex:1}
+.forecast-high{font-weight:600;font-size:0.95rem}
+.forecast-low{color:var(--text3);font-size:0.82rem}
+
+.weather-tip{
+  background:linear-gradient(135deg,#fef3c7,#fde68a);
+  border-radius:var(--radius2);
+  padding:1rem 1.25rem;
+  margin-top:1rem;
+  border:0.5px solid #f59e0b;
+}
+
+.weather-tip-text{font-size:0.85rem;color:#92400e;font-weight:500}

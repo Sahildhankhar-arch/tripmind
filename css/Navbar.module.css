@@ -1,0 +1,48 @@
+/* Navbar.module.css — nav, .logo, .nav-links, .btn, .btn-primary */
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(250,249,247,0.92);
+  backdrop-filter:blur(16px);
+  border-bottom:0.5px solid var(--border);
+  padding:0 2rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+}
+
+.logo{
+  font-family:'DM Serif Display',serif;
+  font-size:1.5rem;
+  color:var(--text);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.logo span{color:var(--accent)}
+
+.nav-links{
+  display:flex;
+  gap:2rem;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:var(--text2);
+  font-size:0.875rem;
+  font-weight:500;
+  transition:color 0.2s;
+}
+
+.nav-links a:hover{color:var(--text)}
+
+.nav-right{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}

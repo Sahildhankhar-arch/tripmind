@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TripMind AI</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- CSS Modules -->
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/Navbar.module.css">
+<link rel="stylesheet" href="css/Hero.module.css">
+<link rel="stylesheet" href="css/Cards.module.css">
+<link rel="stylesheet" href="css/Planner.module.css">
+<link rel="stylesheet" href="css/Weather.module.css">
+<link rel="stylesheet" href="css/Dashboard.module.css">
+<link rel="stylesheet" href="css/Admin.module.css">
+<link rel="stylesheet" href="css/Chatbot.module.css">
+<link rel="stylesheet" href="css/Sentiment.module.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<h2 class="sr-only">TripMind AI – Smart AI Travel Planner with destinations, hotels, weather, AI itinerary, budget prediction, and chatbot features</h2>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">✈ Trip<span>Mind</span></div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')">Home</a></li>
+    <li><a href="#" onclick="showPage('explore')">Explore</a></li>
+    <li><a href="#" onclick="showPage('hotels')">Hotels</a></li>
+    <li><a href="#" onclick="showPage('planner')">AI Planner</a></li>
+    <li><a href="#" onclick="showPage('weather')">Weather</a></li>
+    <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn" onclick="showPage('admin')">Admin</button>
+    <button class="btn btn-primary" onclick="showPage('dashboard')">My Trips</button>
+  </div>
+</nav>
+
+<!-- PAGES -->
+<div id="page-home" class="page active"></div>
+<div id="page-explore" class="page"></div>
+<div id="page-hotels" class="page"></div>
+<div id="page-planner" class="page"></div>
+<div id="page-weather" class="page"></div>
+<div id="page-dashboard" class="page"></div>
+<div id="page-admin" class="page"></div>
+
+<!-- CHATBOT FAB -->
+<button class="chatbot-fab" onclick="toggleChat()" id="chat-fab" title="AI Travel Assistant">🤖</button>
+<div class="chatbot-window" id="chat-window">
+  <div class="chat-header">
+    <div class="chat-avatar">🤖</div>
+    <div class="chat-header-info">
+      <h4>TripMind AI</h4>
+      <p>Your smart travel assistant</p>
+    </div>
+    <div class="chat-online"></div>
+  </div>
+  <div class="chat-suggestions">
+    <span class="sug-chip" onclick="quickChat('Plan a 5-day Bali trip')">🏖️ Plan Bali trip</span>
+    <span class="sug-chip" onclick="quickChat('Best budget hotels in Paris?')">🏨 Paris hotels</span>
+    <span class="sug-chip" onclick="quickChat('Visa requirements for Japan')">🗾 Japan visa</span>
+  </div>
+  <div class="chat-messages" id="chat-msgs">
+    <div class="chat-msg bot">Hi! I'm your TripMind AI assistant. I can help you plan trips, find hotels, check visa requirements, and create personalized itineraries. Where would you like to go? ✈️</div>
+  </div>
+  <div class="chat-input-wrap">
+    <input class="chat-input" type="text" placeholder="Ask me anything about travel..." id="chat-in" onkeypress="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">➤</button>
+  </div>
+</div>
+
+<!-- DATA -->
+<script src="data/destinations.js"></script>
+<script src="data/hotels.js"></script>
+<script src="data/itineraries.js"></script>
+<script src="data/transport.js"></script>
+
+<!-- UTILS -->
+<script src="utils/gradColors.js"></script>
+<script src="utils/formatCurrency.js"></script>
+
+<!-- COMPONENTS -->
+<script src="components/Navbar.jsx.js"></script>
+<script src="components/HeroSearch.jsx.js"></script>
+<script src="components/DestinationCard.jsx.js"></script>
+<script src="components/HotelCard.jsx.js"></script>
+<script src="components/ItineraryTimeline.jsx.js"></script>
+<script src="components/BudgetChart.jsx.js"></script>
+<script src="components/TransportCard.jsx.js"></script>
+<script src="components/ChatbotFAB.jsx.js"></script>
+<script src="components/WeatherWidget.jsx.js"></script>
+
+<!-- PAGES -->
+<script src="pages/Home.jsx.js"></script>
+<script src="pages/Planner.jsx.js"></script>
+<script src="pages/Dashboard.jsx.js"></script>
+<script src="pages/AdminPanel.jsx.js"></script>
+
+<!-- APP INIT -->
+<script src="app.js"></script>
+
+</body>
+</html>

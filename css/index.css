@@ -1,0 +1,95 @@
+/* index.css — CSS variables, reset, body, .sr-only */
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#faf9f7;
+  --surface:#ffffff;
+  --surface2:#f4f2ee;
+  --text:#1a1814;
+  --text2:#6b6660;
+  --text3:#a09c97;
+  --accent:#e85d3f;
+  --accent2:#f4a261;
+  --border:rgba(0,0,0,0.08);
+  --border2:rgba(0,0,0,0.12);
+  --shadow:0 2px 16px rgba(0,0,0,0.06);
+  --shadow2:0 8px 40px rgba(0,0,0,0.12);
+  --radius:16px;
+  --radius2:12px;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  border:0;
+}
+
+/* PAGE SYSTEM */
+.page{display:none}
+.page.active{display:block}
+
+/* SECTION */
+.section{padding:5rem 2rem;max-width:1200px;margin:0 auto}
+.section-header{text-align:center;margin-bottom:3rem}
+.section-tag{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);margin-bottom:0.75rem}
+.section h2{font-family:'DM Serif Display',serif;font-size:2.5rem;color:var(--text);margin-bottom:1rem}
+.section p{color:var(--text2);font-size:1rem;max-width:520px;margin:0 auto;line-height:1.7}
+
+/* TABS / NAV */
+.page-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:2rem;overflow-x:auto}
+.page-tab{padding:12px 24px;font-size:0.875rem;font-weight:500;color:var(--text2);cursor:pointer;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap}
+.page-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.page-tab:hover{color:var(--text)}
+
+/* FILTERS */
+.filter-bar{display:flex;gap:12px;margin-bottom:2rem;flex-wrap:wrap}
+.filter-btn{padding:8px 18px;border-radius:100px;border:1px solid var(--border2);background:var(--surface);font-size:0.82rem;font-weight:500;cursor:pointer;color:var(--text2);transition:all 0.2s}
+.filter-btn:hover,.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.price-filter{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--text2)}
+
+/* BUTTONS */
+.btn{padding:10px 20px;border-radius:100px;font-size:0.875rem;font-weight:500;cursor:pointer;transition:all 0.2s;border:1px solid var(--border2);background:transparent;color:var(--text)}
+.btn:hover{background:var(--surface2)}
+.btn-primary{background:var(--accent);color:#fff;border:none}
+.btn-primary:hover{background:#d44e32;transform:translateY(-1px)}
+
+/* MAP */
+.map-container{background:linear-gradient(135deg,#e8f5e9,#e3f2fd);border-radius:var(--radius);border:0.5px solid var(--border);overflow:hidden;position:relative;height:400px;display:flex;align-items:center;justify-content:center}
+.map-placeholder{text-align:center;color:var(--text2)}
+.map-placeholder h3{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--text);margin-bottom:0.5rem}
+.map-markers{position:absolute;inset:0}
+.map-marker{position:absolute;display:flex;flex-direction:column;align-items:center;cursor:pointer;transition:transform 0.2s}
+.map-marker:hover{transform:scale(1.1)}
+
+/* WISHLIST HEART */
+.heart-btn{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.9);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:all 0.2s;backdrop-filter:blur(4px)}
+.heart-btn.liked{background:var(--accent);color:#fff}
+
+/* FORM INPUTS */
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-size:0.8rem;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+.form-input{width:100%;padding:12px 16px;border:1px solid var(--border2);border-radius:var(--radius2);font-family:'DM Sans',sans-serif;font-size:0.9rem;background:var(--bg);color:var(--text);outline:none;transition:border 0.2s}
+.form-input:focus{border-color:var(--accent)}
+.form-select{width:100%;padding:12px 16px;border:1px solid var(--border2);border-radius:var(--radius2);font-family:'DM Sans',sans-serif;font-size:0.9rem;background:var(--bg);color:var(--text);outline:none;appearance:none;cursor:pointer}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .planner-layout,.weather-grid,.budget-layout,.dash-layout,.admin-layout,.analytics-grid{grid-template-columns:1fr}
+  .stat-cards,.admin-stat-grid{grid-template-columns:repeat(2,1fr)}
+  .sentiment-grid{grid-template-columns:1fr}
+  .chatbot-window{right:1rem;width:calc(100% - 2rem)}
+}

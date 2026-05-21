@@ -1,0 +1,81 @@
+/* Dashboard.module.css — .dash-layout, .dash-sidebar, .stat-cards, .trip-table */
+
+.dash-layout{display:grid;grid-template-columns:240px 1fr;gap:0;min-height:calc(100vh - 64px)}
+
+.dash-sidebar{
+  background:var(--surface);
+  border-right:0.5px solid var(--border);
+  padding:1.5rem 0;
+}
+
+.dash-nav-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 1.5rem;
+  cursor:pointer;
+  transition:all 0.2s;
+  font-size:0.9rem;
+  color:var(--text2);
+  border-left:3px solid transparent;
+}
+
+.dash-nav-item:hover{background:var(--surface2);color:var(--text)}
+.dash-nav-item.active{color:var(--accent);border-left-color:var(--accent);background:rgba(232,93,63,0.05)}
+.dash-nav-icon{font-size:1.1rem}
+
+.dash-content{padding:2rem;background:var(--bg)}
+
+.dash-greeting{margin-bottom:2rem}
+.dash-greeting h2{font-family:'DM Serif Display',serif;font-size:2rem}
+.dash-greeting p{color:var(--text2);margin-top:4px}
+
+.stat-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+
+.stat-card{
+  background:var(--surface);
+  border-radius:var(--radius2);
+  border:0.5px solid var(--border);
+  padding:1.25rem;
+}
+
+.stat-card-icon{font-size:1.5rem;margin-bottom:0.75rem}
+.stat-card-num{font-family:'DM Serif Display',serif;font-size:1.75rem;color:var(--text)}
+.stat-card-label{font-size:0.78rem;color:var(--text2);margin-top:2px}
+
+.trip-table{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  overflow:hidden;
+}
+
+.table-header{
+  padding:1.25rem 1.5rem;
+  border-bottom:0.5px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.table-header h3{font-size:1rem;font-weight:600}
+
+table{width:100%;border-collapse:collapse}
+th{
+  padding:0.75rem 1.5rem;
+  text-align:left;
+  font-size:0.75rem;
+  font-weight:600;
+  color:var(--text2);
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  border-bottom:0.5px solid var(--border);
+  background:var(--surface2);
+}
+td{padding:1rem 1.5rem;font-size:0.875rem;color:var(--text);border-bottom:0.5px solid var(--border)}
+tr:last-child td{border-bottom:none}
+
+.status-badge{padding:4px 10px;border-radius:100px;font-size:0.72rem;font-weight:600}
+.status-confirmed{background:#dcfce7;color:#15803d}
+.status-pending{background:#fef3c7;color:#92400e}
+.status-completed{background:#e0f2fe;color:#0369a1}

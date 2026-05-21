@@ -1,0 +1,141 @@
+/* Hero.module.css — .hero, .hero-bg, .hero-overlay, .hero-content, .search-box, .hero-stats */
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(135deg,#1a1814 0%,#2d2520 50%,#1a1814 100%);
+  min-height:88vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:4rem 2rem;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  opacity:0.3;
+  background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80') center/cover;
+  filter:blur(2px);
+}
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to bottom,rgba(26,24,20,0.7),rgba(26,24,20,0.5));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+
+.hero-tag{
+  display:inline-block;
+  background:rgba(232,93,63,0.2);
+  border:1px solid rgba(232,93,63,0.4);
+  color:#f4a261;
+  padding:6px 16px;
+  border-radius:100px;
+  font-size:0.75rem;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  margin-bottom:1.5rem;
+}
+
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.5rem,6vw,4.5rem);
+  color:#fff;
+  line-height:1.1;
+  margin-bottom:1.5rem;
+}
+
+.hero h1 em{color:var(--accent2);font-style:italic}
+
+.hero p{
+  color:rgba(255,255,255,0.7);
+  font-size:1.1rem;
+  max-width:520px;
+  margin:0 auto 2.5rem;
+  line-height:1.7;
+}
+
+/* SEARCH BOX */
+.search-box{
+  background:rgba(255,255,255,0.96);
+  border-radius:20px;
+  padding:1rem;
+  display:flex;
+  gap:1px;
+  align-items:stretch;
+  box-shadow:var(--shadow2);
+  max-width:680px;
+  margin:0 auto;
+}
+
+.search-field{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  padding:8px 16px;
+  border-right:1px solid var(--border);
+}
+
+.search-field:last-of-type{border-right:none}
+
+.search-field label{
+  font-size:0.7rem;
+  font-weight:600;
+  color:var(--text2);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:4px;
+}
+
+.search-field input,
+.search-field select{
+  border:none;
+  outline:none;
+  font-family:'DM Sans',sans-serif;
+  font-size:0.9rem;
+  color:var(--text);
+  background:transparent;
+  cursor:pointer;
+}
+
+.search-field select{appearance:none}
+
+.search-btn{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:14px;
+  padding:0 24px;
+  cursor:pointer;
+  font-size:0.9rem;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:all 0.2s;
+}
+
+.search-btn:hover{background:#d44e32}
+
+/* HERO STATS */
+.hero-stats{
+  display:flex;
+  gap:3rem;
+  justify-content:center;
+  margin-top:3rem;
+  position:relative;
+  z-index:2;
+}
+
+.stat{text-align:center}
+.stat-num{font-family:'DM Serif Display',serif;font-size:2rem;color:#fff}
+.stat-label{font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:2px}

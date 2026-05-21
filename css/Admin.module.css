@@ -1,0 +1,64 @@
+/* Admin.module.css — .admin-layout, .admin-sidebar, .analytics-grid */
+
+.admin-layout{display:grid;grid-template-columns:220px 1fr;gap:0;min-height:calc(100vh - 64px)}
+
+.admin-sidebar{
+  background:#1a1814;
+  padding:1.5rem 0;
+}
+
+.admin-nav-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 1.5rem;
+  cursor:pointer;
+  transition:all 0.2s;
+  font-size:0.85rem;
+  color:rgba(255,255,255,0.6);
+}
+
+.admin-nav-item:hover,
+.admin-nav-item.active{color:#fff;background:rgba(255,255,255,0.08)}
+
+.admin-content{padding:2rem;background:var(--bg)}
+
+.admin-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+
+.admin-stat{
+  background:var(--surface);
+  border-radius:var(--radius2);
+  border:0.5px solid var(--border);
+  padding:1.5rem;
+}
+
+.admin-stat-val{font-family:'DM Serif Display',serif;font-size:2rem}
+.admin-stat-label{font-size:0.8rem;color:var(--text2);margin-top:4px}
+.admin-stat-change{font-size:0.75rem;font-weight:600;margin-top:6px}
+.change-pos{color:#15803d}
+.change-neg{color:#dc2626}
+
+.analytics-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem}
+
+.analytics-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  padding:1.5rem;
+}
+
+.analytics-card h3{font-size:1rem;font-weight:600;margin-bottom:1.5rem}
+
+.mini-bar{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.mini-bar-label{font-size:0.82rem;color:var(--text2);width:80px;flex-shrink:0}
+.mini-bar-track{flex:1;height:8px;background:var(--border);border-radius:100px;overflow:hidden}
+.mini-bar-fill{height:100%;border-radius:100px;background:var(--accent)}
+.mini-bar-val{font-size:0.82rem;font-weight:600;width:40px;text-align:right}
+
+.top-dest-list{display:flex;flex-direction:column;gap:12px}
+.top-dest-item{display:flex;align-items:center;gap:12px}
+.top-dest-rank{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--border2);width:24px}
+.top-dest-info{flex:1}
+.top-dest-name{font-weight:600;font-size:0.875rem}
+.top-dest-count{font-size:0.75rem;color:var(--text2)}
+.top-dest-trend{font-size:0.82rem;font-weight:600;color:#15803d}

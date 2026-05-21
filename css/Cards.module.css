@@ -1,0 +1,132 @@
+/* Cards.module.css — .dest-card, .hotel-card, .transport-card, .budget-card */
+
+/* ---- DESTINATION CARDS ---- */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+
+.dest-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:0.5px solid var(--border);
+  cursor:pointer;
+  transition:all 0.3s;
+  position:relative;
+}
+
+.dest-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+
+.dest-img{width:100%;height:200px;object-fit:cover;display:block}
+.dest-img-placeholder{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem}
+
+.dest-body{padding:1.25rem}
+.dest-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem}
+.dest-name{font-family:'DM Serif Display',serif;font-size:1.25rem;color:var(--text)}
+.dest-rating{display:flex;align-items:center;gap:4px;font-size:0.8rem;font-weight:600;color:var(--text)}
+.dest-rating span{color:#f59e0b}
+.dest-meta{font-size:0.8rem;color:var(--text2);margin-bottom:0.75rem}
+
+.dest-tags{display:flex;gap:6px;flex-wrap:wrap}
+.tag{padding:4px 10px;border-radius:100px;font-size:0.72rem;font-weight:500}
+.tag-beach{background:#e0f2fe;color:#0369a1}
+.tag-culture{background:#fef3c7;color:#92400e}
+.tag-adventure{background:#dcfce7;color:#166534}
+.tag-food{background:#fce7f3;color:#9d174d}
+.tag-nature{background:#f0fdf4;color:#15803d}
+
+.dest-price{margin-top:0.75rem;display:flex;justify-content:space-between;align-items:center}
+.price-from{font-size:0.75rem;color:var(--text3)}
+.price-val{font-size:1.1rem;font-weight:600;color:var(--text)}
+.price-val span{font-size:0.75rem;font-weight:400;color:var(--text2)}
+.badge-ai{position:absolute;top:12px;left:12px;background:rgba(26,24,20,0.85);color:#f4a261;padding:4px 10px;border-radius:100px;font-size:0.7rem;font-weight:600;backdrop-filter:blur(8px)}
+
+/* ---- HOTEL CARDS ---- */
+.hotel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+
+.hotel-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:0.5px solid var(--border);
+  cursor:pointer;
+  transition:all 0.3s;
+}
+
+.hotel-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+
+.hotel-img-wrap{position:relative;height:220px;overflow:hidden}
+.hotel-img{width:100%;height:100%;object-fit:cover;display:block;font-size:4rem;display:flex;align-items:center;justify-content:center;background:var(--surface2)}
+
+.hotel-amenities{position:absolute;bottom:12px;left:12px;display:flex;gap:6px}
+.amenity-pill{background:rgba(255,255,255,0.9);border-radius:100px;padding:3px 10px;font-size:0.7rem;font-weight:500;color:var(--text);backdrop-filter:blur(4px)}
+
+.hotel-body{padding:1.25rem}
+.hotel-location{font-size:0.8rem;color:var(--text3);margin-bottom:0.5rem;display:flex;align-items:center;gap:4px}
+.hotel-name{font-family:'DM Serif Display',serif;font-size:1.3rem;color:var(--text);margin-bottom:0.5rem}
+.hotel-review{font-size:0.82rem;color:var(--text2);line-height:1.5;margin-bottom:1rem}
+.hotel-footer{display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border);padding-top:1rem}
+.hotel-price{font-size:1.3rem;font-weight:600;color:var(--text)}
+.hotel-price span{font-size:0.8rem;font-weight:400;color:var(--text2)}
+.book-btn{padding:8px 20px;background:var(--accent);color:#fff;border:none;border-radius:100px;font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s}
+.book-btn:hover{background:#d44e32}
+
+/* ---- TRANSPORT CARDS ---- */
+.transport-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+
+.transport-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  padding:1.5rem;
+  cursor:pointer;
+  transition:all 0.2s;
+  position:relative;
+  overflow:hidden;
+}
+
+.transport-card:hover{transform:translateY(-2px);box-shadow:var(--shadow2)}
+
+.transport-card.recommended::before{
+  content:'Best Value';
+  position:absolute;
+  top:12px;
+  right:-24px;
+  background:var(--accent);
+  color:#fff;
+  font-size:0.65rem;
+  font-weight:700;
+  padding:3px 32px;
+  transform:rotate(45deg);
+}
+
+.transport-icon{font-size:2.5rem;margin-bottom:1rem}
+.transport-type{font-weight:700;font-size:1rem;margin-bottom:0.25rem}
+.transport-route{font-size:0.82rem;color:var(--text2);margin-bottom:1rem}
+.transport-details{display:flex;gap:1.5rem}
+.transport-detail{font-size:0.8rem}
+.transport-detail-label{color:var(--text3);font-size:0.72rem;display:block;margin-bottom:2px}
+.transport-detail-val{font-weight:600;font-size:0.9rem}
+
+/* ---- BUDGET CARDS ---- */
+.budget-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+
+.budget-card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  padding:2rem;
+}
+
+.budget-total{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--text);margin-bottom:0.25rem}
+.budget-subtitle{color:var(--text2);font-size:0.9rem;margin-bottom:2rem}
+
+.budget-bar-item{margin-bottom:1.25rem}
+.budget-bar-header{display:flex;justify-content:space-between;margin-bottom:6px;font-size:0.85rem}
+.budget-bar-label{font-weight:500}
+.budget-bar-val{color:var(--text2)}
+.budget-bar-track{height:8px;background:var(--border);border-radius:100px;overflow:hidden}
+.budget-bar-fill{height:100%;border-radius:100px;transition:width 1s ease}
+
+.donut-wrap{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5rem}
+.donut-legend{display:flex;flex-direction:column;gap:8px;width:100%}
+.legend-item{display:flex;align-items:center;gap:10px;font-size:0.85rem}
+.legend-dot{width:12px;height:12px;border-radius:50%;flex-shrink:0}

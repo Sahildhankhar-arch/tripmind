@@ -1,0 +1,74 @@
+/* Planner.module.css — .planner-layout, .form-group, .itinerary-result, .day-block, .activity */
+
+.planner-layout{display:grid;grid-template-columns:340px 1fr;gap:2rem}
+
+.planner-form{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  padding:2rem;
+  height:fit-content;
+}
+
+.budget-slider{width:100%;margin-top:8px}
+.budget-display{text-align:right;font-weight:600;color:var(--accent);margin-top:4px}
+
+.interest-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.chip{padding:6px 14px;border-radius:100px;font-size:0.78rem;font-weight:500;cursor:pointer;border:1px solid var(--border2);background:var(--surface);color:var(--text2);transition:all 0.2s}
+.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+.generate-btn{
+  width:100%;
+  padding:14px;
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  border-radius:var(--radius2);
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+
+.generate-btn:hover{background:#d44e32;transform:translateY(-1px)}
+
+/* ITINERARY RESULT */
+.itinerary-result{
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:0.5px solid var(--border);
+  overflow:hidden;
+}
+
+.itinerary-header{
+  background:linear-gradient(135deg,#1a1814,#2d2520);
+  padding:2rem;
+  color:#fff;
+}
+
+.itinerary-title{font-family:'DM Serif Display',serif;font-size:2rem;margin-bottom:0.5rem}
+.itinerary-subtitle{opacity:0.7;font-size:0.9rem}
+
+.itinerary-meta{display:flex;gap:2rem;margin-top:1.5rem}
+.i-meta-item{text-align:center}
+.i-meta-num{font-family:'DM Serif Display',serif;font-size:1.5rem}
+.i-meta-label{font-size:0.75rem;opacity:0.7}
+
+.day-timeline{padding:2rem}
+
+.day-block{display:flex;gap:1.5rem;margin-bottom:2rem}
+.day-indicator{display:flex;flex-direction:column;align-items:center;gap:0}
+.day-circle{width:48px;height:48px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:0.9rem;flex-shrink:0}
+.day-line{width:2px;flex:1;background:var(--border2);margin-top:4px}
+
+.day-content{flex:1}
+.day-title{font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:0.75rem}
+
+.activity-list{display:flex;flex-direction:column;gap:8px}
+.activity{display:flex;align-items:flex-start;gap:10px;padding:10px 14px;background:var(--bg);border-radius:var(--radius2);border:0.5px solid var(--border)}
+.activity-time{font-size:0.75rem;font-weight:600;color:var(--accent);min-width:48px}
+.activity-text{font-size:0.85rem;color:var(--text2);flex:1}
