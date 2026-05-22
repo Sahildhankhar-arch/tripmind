@@ -5,7 +5,7 @@
  * Extends the base showPage defined in Navbar.jsx.js.
  */
 const originalShowPage = window.showPage;
-
+let hotels = [];
 window.showPage = function(id) {
   originalShowPage(id);
 
@@ -32,6 +32,19 @@ window.showPage = function(id) {
   if (id === "explore") renderExploreGrid();
 }
 
+async function loadHotels() {
+  try {
+    const response = await fetch("http://localhost:5000/api/hotels");
+    hotels = await response.json();
+
+    if (typeof renderHotelGrid === "function") {
+      renderHotelGrid();
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+}
 /** Boot the application */
 function init() {
   renderHomePage();
@@ -41,7 +54,11 @@ function init() {
   renderExplorePage();
   renderHotelsPage();
   renderWeatherPage();
+  
+  loadHotels();
+  
 
+  
   // Render home data grids
   const homeGrid  = document.getElementById("home-dest-grid");
   const trendGrid = document.getElementById("trending-grid");
