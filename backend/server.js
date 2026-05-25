@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/hotels", hotelRoutes);
+const chatRoutes = require("./routes/chatRoutes");
+app.use("/api/chat", chatRoutes);
+
 
 app.get("/", (req, res) => {
   res.send("TripMind Backend Running");

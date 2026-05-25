@@ -1,124 +1,179 @@
-# ✈️ TripMind AI — Smart Travel Planner
+# TripMind AI 🌍✈️
 
-A fully-featured AI travel planning web application with destinations, hotels, weather, AI itinerary generation, budget prediction, chatbot, and admin analytics.
+AI-powered full stack travel planner web application.
 
-## 📁 Project Structure
+---
 
-```
+# Features
+
+- AI Travel Recommendation
+- NLP-based Smart Chatbot
+- Hotel Search & Recommendations
+- Budget Prediction System
+- Weather Information
+- Dashboard & Analytics
+- Smart Accommodation Suggestions
+- MongoDB Integration
+- REST APIs
+- Responsive UI
+
+---
+
+# Tech Stack
+
+## Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+## Backend
+- Node.js
+- Express.js
+
+## Database
+- MongoDB Atlas
+- Mongoose
+
+## Deployment
+- Vercel (Frontend)
+- Railway (Backend)
+
+## AI/NLP
+- Gemini API
+- NLP-based chatbot
+- Recommendation System
+
+---
+
+# Project Structure
+
 tripmind/
-├── index.html                  # Main entry point
-├── app.js                      # App initialization & boot
 │
-├── css/
-│   ├── index.css               # CSS variables (:root), reset, body, layout
-│   ├── Navbar.module.css       # nav, .logo, .nav-links
-│   ├── Hero.module.css         # .hero, .search-box, .hero-stats
-│   ├── Cards.module.css        # .dest-card, .hotel-card, .transport-card, .budget-card
-│   ├── Planner.module.css      # .planner-layout, .itinerary-result, .day-block, .activity
-│   ├── Weather.module.css      # .weather-grid, .weather-main, .forecast, .weather-tip
-│   ├── Dashboard.module.css    # .dash-layout, .dash-sidebar, .stat-cards, .trip-table
-│   ├── Admin.module.css        # .admin-layout, .admin-sidebar, .analytics-grid
-│   ├── Chatbot.module.css      # .chatbot-fab, .chatbot-window, .chat-msg, .typing-dot
-│   ├── Sentiment.module.css    # .sentiment-card, .review-item, .review-score
-│   └── animations.css          # @keyframes fadeUp, typing, pulse
-│
-├── data/
-│   ├── destinations.js         # destinations[] array
-│   ├── hotels.js               # hotels[] array
-│   ├── itineraries.js          # itineraryData{} object
-│   └── transport.js            # transportData[] array
-│
-├── utils/
-│   ├── gradColors.js           # gradColor() function
-│   └── formatCurrency.js       # formatINR(), formatINRCompact(), parseINR()
+├── backend/
+│   ├── models/
+│   ├── routes/
+│   ├── server.js
+│   └── .env
 │
 ├── components/
-│   ├── Navbar.jsx.js           # showPage(), showDestDetail()
-│   ├── HeroSearch.jsx.js       # doSearch()
-│   ├── DestinationCard.jsx.js  # createDestCard(), filterDest()
-│   ├── HotelCard.jsx.js        # renderHotelGrid(), filterHotel(), filterByPrice(), bookNow()
-│   ├── ItineraryTimeline.jsx.js # generateItinerary() with loading state
-│   ├── BudgetChart.jsx.js      # drawDonut(), canvas logic
-│   ├── TransportCard.jsx.js    # renderTransport()
-│   ├── ChatbotFAB.jsx.js       # toggleChat(), sendChat(), addChatMsg(), quickChat()
-│   └── WeatherWidget.jsx.js    # updateWeather(), city lookup map
-│
-└── pages/
-    ├── Home.jsx.js             # renderHomePage(), feature cards section
-    ├── Planner.jsx.js          # renderPlannerPage(), switchTab(), renderExploreGrid()
-    ├── Dashboard.jsx.js        # renderDashboardPage(), dashNav()
-    └── AdminPanel.jsx.js       # renderAdminPage(), analytics bars, top destinations list
-```
+├── css/
+├── data/
+├── pages/
+├── utils/
+├── index.html
+├── app.js
+└── README.md
 
-## 🚀 Getting Started
+---
 
-### Run Locally
-Just open `index.html` in your browser — no build tools required!
+# Backend APIs
 
-```bash
-# Option 1: Direct open
-open index.html
+## Hotels API
 
-# Option 2: Simple HTTP server (recommended)
-npx serve .
-# or
-python3 -m http.server 3000
-```
+GET /api/hotels
 
-## 🔑 Environment Variables (for production upgrade)
+Returns hotel data from MongoDB.
 
-### frontend/.env
-```
-VITE_OPENAI_API_KEY=
-VITE_OPENWEATHER_API_KEY=
-VITE_GOOGLE_MAPS_API_KEY=
-VITE_API_BASE_URL=http://localhost:5000
-```
+---
 
-### backend/.env
-```
-MONGODB_URI=
-JWT_SECRET=
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
-OPENAI_API_KEY=
-OPENWEATHER_API_KEY=
-ML_SERVICE_URL=http://localhost:8000
-```
+## Chatbot API
 
-## 🧩 Features
+POST /api/chat
 
-| Feature              | Status |
-|----------------------|--------|
-| Home + Hero Search   | ✅     |
-| Destination Explorer | ✅     |
-| Hotel Listings       | ✅     |
-| AI Itinerary Planner | ✅     |
-| Budget Predictor     | ✅     |
-| Transport Options    | ✅     |
-| Interactive Map      | 🔧 Needs Google Maps API |
-| Weather Widget       | ✅ (static data; upgrade with OpenWeatherMap) |
-| Chatbot              | ✅ (static replies; upgrade with OpenAI API) |
-| Sentiment Analysis   | ✅     |
-| User Dashboard       | ✅     |
-| Admin Analytics      | ✅     |
+Request:
 
-## 🛠️ Tech Stack
+{
+  "message": "Plan a Bali trip"
+}
 
-- **Vanilla HTML/CSS/JS** — zero dependencies, zero build step
-- Ready to migrate to **React + Vite** by converting `.jsx.js` files
-- CSS organized as **CSS Modules** (ready for PostCSS/Vite)
-- Data layer designed for easy swap to **REST API / GraphQL**
+Response:
 
-## 📦 Deploying to GitHub Pages
+{
+  "reply": "AI generated response"
+}
 
-```bash
-git init
-git add .
-git commit -m "Initial commit — TripMind AI"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/tripmind-ai.git
-git push -u origin main
-```
+---
 
-Then enable GitHub Pages from the repo Settings → Pages → Deploy from branch `main`.
+# NLP Chatbot Working
+
+Frontend Chatbot
+        ↓
+Backend API
+        ↓
+Gemini API
+        ↓
+AI Response
+
+The chatbot uses NLP and LLM-based conversational AI for:
+- itinerary generation
+- destination recommendations
+- travel guidance
+- budget planning
+
+---
+
+# Database Usage
+
+MongoDB stores:
+- hotel data
+- bookings
+- user data
+- reviews
+- wishlist
+- chatbot history
+
+---
+
+# Deployment Links
+
+## Frontend
+Vercel Deployment
+
+## Backend
+Railway Deployment
+
+---
+
+# Commands Used
+
+## Install Backend Packages
+
+npm install
+
+---
+
+## Start Backend
+
+node server.js
+
+OR
+
+npx nodemon server.js
+
+---
+
+# Environment Variables
+
+backend/.env
+
+PORT=5000
+MONGO_URI=your_mongodb_uri
+GEMINI_API_KEY=your_gemini_api_key
+
+---
+
+# Future Scope
+
+- Google Maps API
+- Razorpay Payment Integration
+- Voice Assistant
+- Real-time Hotel Availability
+- Flight Booking
+- AI Route Optimization
+- Dynamic Pricing Prediction
+
+---
+
+# Viva Overview
+
+TripMind AI is a full-stack AI-powered travel planning platform that combines recommendation systems, NLP-based chatbot assistance, sentiment analysis, predictive budget estimation, and real-time travel APIs to provide personalized travel experiences.

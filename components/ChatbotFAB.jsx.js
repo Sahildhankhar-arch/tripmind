@@ -2,14 +2,6 @@
 
 let chatOpen = false;
 
-const botReplies = [
-  "Great choice! Bali is magical in June–September. I'd recommend staying in Ubud for the first 2 days and Seminyak for the rest. Want me to generate a full itinerary?",
-  "For Paris hotels on a mid-range budget, I love Le Marais area — walkable to Notre Dame, the Louvre and Pompidou. Options start around ₹8,000/night. Shall I filter by your dates?",
-  "Japan visa for Indian citizens is now on-arrival for 30 days! You'll need a valid passport, return ticket, and proof of accommodation. Want the full checklist?",
-  "I can help with that! Based on your travel history, you'd love Ubud's spiritual culture and Seminyak's vibrant beach clubs. The best time to visit is May–September.",
-  "For a solo trip on ₹50,000 for 7 days, I'd suggest Southeast Asia — Bali, Thailand, or Vietnam. All offer incredible experiences on that budget. Which do you prefer?",
-];
-
 let replyIdx = 0;
 
 /**
@@ -26,26 +18,64 @@ function toggleChat() {
 /**
  * Sends the user's chat message and simulates a bot reply.
  */
-function sendChat() {
+async function sendChat() {
+
   const inp = document.getElementById("chat-in");
+
   const msg = inp.value.trim();
+
   if (!msg) return;
 
   addChatMsg(msg, "user");
+
   inp.value = "";
 
-  const msgs   = document.getElementById("chat-msgs");
+  const msgs = document.getElementById("chat-msgs");
+
   const typing = document.createElement("div");
+
   typing.className = "chat-typing";
-  typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+
+  typing.innerHTML =
+    '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+
   msgs.appendChild(typing);
+
   msgs.scrollTop = msgs.scrollHeight;
 
-  setTimeout(() => {
+  try {
+
+    const response = await fetch(
+      "https://tripmind-production-3598.up.railway.app/api/chat",
+      {
+
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: msg
+        })
+
+      }
+    );
+
+    const data = await response.json();
+
     typing.remove();
-    addChatMsg(botReplies[replyIdx % botReplies.length], "bot");
-    replyIdx++;
-  }, 1400);
+
+    addChatMsg(data.reply, "bot");
+
+  } catch (error) {
+
+    typing.remove();
+
+    addChatMsg("AI service unavailable.", "bot");
+
+    console.log(error);
+  }
 }
 
 /**
