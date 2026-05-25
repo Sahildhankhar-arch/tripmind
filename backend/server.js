@@ -1,7 +1,8 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-require("dotenv").config();
+
 console.log(process.env.MONGO_URI);
 
 const hotelRoutes = require("./routes/hotelRoutes");
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use("/api/hotels", hotelRoutes);
 const chatRoutes = require("./routes/chatRoutes");
 app.use("/api/chat", chatRoutes);
+
 
 
 app.get("/", (req, res) => {

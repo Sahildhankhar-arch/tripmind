@@ -46,7 +46,7 @@ async function sendChat() {
   try {
 
     const response = await fetch(
-      "https://tripmind-production-3598.up.railway.app/api/chat",
+      "http://localhost:5000/api/chat",
       {
 
         method: "POST",
